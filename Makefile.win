@@ -1,0 +1,94 @@
+# Project: minisql
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = API.o BF_BufferManager.o BF_FileHandle.o BFManager.o catlogmanager.o getcommand.o getcreate.o getdelete.o getdrop.o getexe.o getinsert.o getquit.o getselect.o getword.o IndexManager.o interpreter.o RM_Filehandle.o RM_Filescan.o rm_manager.o RM_Record.o RM_RID.o scan.o main.o
+LINKOBJ  = API.o BF_BufferManager.o BF_FileHandle.o BFManager.o catlogmanager.o getcommand.o getcreate.o getdelete.o getdrop.o getexe.o getinsert.o getquit.o getselect.o getword.o IndexManager.o interpreter.o RM_Filehandle.o RM_Filescan.o rm_manager.o RM_Record.o RM_RID.o scan.o main.o
+LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = minisql.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11 -g3
+CFLAGS   = $(INCS) -std=gnu++11 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+API.o: API.cpp
+	$(CPP) -c API.cpp -o API.o $(CXXFLAGS)
+
+BF_BufferManager.o: BF_BufferManager.cpp
+	$(CPP) -c BF_BufferManager.cpp -o BF_BufferManager.o $(CXXFLAGS)
+
+BF_FileHandle.o: BF_FileHandle.cpp
+	$(CPP) -c BF_FileHandle.cpp -o BF_FileHandle.o $(CXXFLAGS)
+
+BFManager.o: BFManager.cpp
+	$(CPP) -c BFManager.cpp -o BFManager.o $(CXXFLAGS)
+
+catlogmanager.o: catlogmanager.cpp
+	$(CPP) -c catlogmanager.cpp -o catlogmanager.o $(CXXFLAGS)
+
+getcommand.o: getcommand.cpp
+	$(CPP) -c getcommand.cpp -o getcommand.o $(CXXFLAGS)
+
+getcreate.o: getcreate.cpp
+	$(CPP) -c getcreate.cpp -o getcreate.o $(CXXFLAGS)
+
+getdelete.o: getdelete.cpp
+	$(CPP) -c getdelete.cpp -o getdelete.o $(CXXFLAGS)
+
+getdrop.o: getdrop.cpp
+	$(CPP) -c getdrop.cpp -o getdrop.o $(CXXFLAGS)
+
+getexe.o: getexe.cpp
+	$(CPP) -c getexe.cpp -o getexe.o $(CXXFLAGS)
+
+getinsert.o: getinsert.cpp
+	$(CPP) -c getinsert.cpp -o getinsert.o $(CXXFLAGS)
+
+getquit.o: getquit.cpp
+	$(CPP) -c getquit.cpp -o getquit.o $(CXXFLAGS)
+
+getselect.o: getselect.cpp
+	$(CPP) -c getselect.cpp -o getselect.o $(CXXFLAGS)
+
+getword.o: getword.cpp
+	$(CPP) -c getword.cpp -o getword.o $(CXXFLAGS)
+
+IndexManager.o: IndexManager.cpp
+	$(CPP) -c IndexManager.cpp -o IndexManager.o $(CXXFLAGS)
+
+interpreter.o: interpreter.cpp
+	$(CPP) -c interpreter.cpp -o interpreter.o $(CXXFLAGS)
+
+RM_Filehandle.o: RM_Filehandle.cpp
+	$(CPP) -c RM_Filehandle.cpp -o RM_Filehandle.o $(CXXFLAGS)
+
+RM_Filescan.o: RM_Filescan.cpp
+	$(CPP) -c RM_Filescan.cpp -o RM_Filescan.o $(CXXFLAGS)
+
+rm_manager.o: rm_manager.cpp
+	$(CPP) -c rm_manager.cpp -o rm_manager.o $(CXXFLAGS)
+
+RM_Record.o: RM_Record.cpp
+	$(CPP) -c RM_Record.cpp -o RM_Record.o $(CXXFLAGS)
+
+RM_RID.o: RM_RID.cpp
+	$(CPP) -c RM_RID.cpp -o RM_RID.o $(CXXFLAGS)
+
+scan.o: scan.cpp
+	$(CPP) -c scan.cpp -o scan.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)

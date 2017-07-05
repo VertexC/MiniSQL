@@ -1,0 +1,14 @@
+BF_BufferManager.o: BF_BufferManager.cpp BF_BufferManager.h BF_internal.h
+BF_FileHandle.o: BF_FileHandle.cpp BF_FileHandle.h BF_BufferManager.h \
+ BF_internal.h
+BFManager.o: BFManager.cpp BFManager.h BF_BufferManager.h BF_internal.h \
+ BF_FileHandle.h
+RM_Filehandle.o: RM_Filehandle.cpp RM.h BFManager.h BF_BufferManager.h \
+ BF_internal.h BF_FileHandle.h RM_RID.h
+RM_Filescan.o: RM_Filescan.cpp RM.h BFManager.h BF_BufferManager.h \
+ BF_internal.h BF_FileHandle.h RM_RID.h
+rm_manager.o: rm_manager.cpp RM.h BFManager.h BF_BufferManager.h \
+ BF_internal.h BF_FileHandle.h RM_RID.h
+RM_Record.o: RM_Record.cpp RM.h BFManager.h BF_BufferManager.h \
+ BF_internal.h BF_FileHandle.h RM_RID.h
+RM_RID.o: RM_RID.cpp RM_RID.h

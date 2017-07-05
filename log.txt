@@ -1,0 +1,47 @@
+6/11
+DONE:
+
+make the buffer manager work
+1. use the STL to make hashtable work. Remeber to provide hash function on
+our own in declaration as well as iterator declartion.
+2. slot has to be initialized after finding it with iterator.
+3. a block has to be unpinned after use
+--4. minor bug, the prev of a pinned block won't update (solved, doubly linked list problem)
+-----------------------
+
+make the block filehandle work
+make the block block manager work
+1. add back flush all blocks
+2. how to actually transform from a FILE* to a int(use some function or just (int)) remains a problem
+if a simple cast is not enough, we will try anthor way
+3. in openfile, change wb+ --> ab+, for if it is write, then the old content is cleaned when opened.
+-----------------------
+TODO:
+make the record manager work
+
+make record filehandle
+
+filescan
+
+6/17
+in filescan, we need to find some ways to get next record  -- done
+
+changes char *& to replace char** in bufmanager
+
+get bugs.. seems forget to initialize
+6/18
+add initialization in RM_filehandle ctor
+minor bugs fixex. in write block: !fseek -> fseek (0 is normal)
+6/19
+fix a bug in BF_FileHandle, buggy error checking at line 48, return 0 is normal
+fix a bug in RM_FileHandle, have to pass by reference in inline int RM_FileHandle::getBitmapAndBlockHdr
+fix a bug in RM_Record, when set record forget to allocate new memory while the data is NULL at first
+it is working now!
+6/21
+to support for Dev-C++, instead of using (int)file, use fileno function
+6/23
+change readBlock in BF_bufferManager, return value of fseek 0 is OK, so wrong error checking
+6/29
+bug caused by destructed twice in RM_Manager, the BF_Manager in it should be
+a reference instead of a solid member, otherwise it will be destructed twice
+(first when RM_Manager is destructed, then itself)

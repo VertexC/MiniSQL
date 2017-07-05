@@ -1,0 +1,36 @@
+﻿  TEST_RM_File.cpp
+f:\myprogramme\1db\mini_sql\minisql\test_rm_file.cpp(23): warning C4101: “slotNum”: 未引用的局部变量
+f:\myprogramme\1db\mini_sql\minisql\test_rm_file.cpp(23): warning C4101: “blockNum”: 未引用的局部变量
+  RM_RID.cpp
+  RM_Record.cpp
+  RM_Manager.cpp
+  RM_Filescan.cpp
+  RM_Filehandle.cpp
+  BF_FileHandle.cpp
+f:\myprogramme\1db\mini_sql\minisql\bf_filehandle.cpp(138): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  BF_BufferManager.cpp
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(39): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: 参见“fileno”的声明
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(70): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: 参见“fileno”的声明
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(93): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: 参见“fileno”的声明
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(112): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: 参见“fileno”的声明
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(147): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: 参见“fileno”的声明
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(249): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fileno. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(2450): note: 参见“fileno”的声明
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(271): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\myprogramme\1db\mini_sql\minisql\bf_buffermanager.cpp(280): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  BFManager.cpp
+f:\myprogramme\1db\mini_sql\minisql\bfmanager.cpp(17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+f:\myprogramme\1db\mini_sql\minisql\bfmanager.cpp(21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+f:\myprogramme\1db\mini_sql\minisql\bfmanager.cpp(52): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\myprogramme\1db\mini_sql\minisql\bfmanager.cpp(49): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+  正在生成代码...
+f:\myprogramme\1db\mini_sql\minisql\rm_manager.cpp(73): warning C4700: 使用了未初始化的局部变量“blockNum”
+  MiniSQL.vcxproj -> F:\MyProgramme\1DB\mini_sql\x64\Debug\MiniSQL.exe
