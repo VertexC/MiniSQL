@@ -8,3 +8,4 @@ primary key(id)
 insert into minisql values('ChenBowen', 1);
 insert into minisql values('XiaoTong', 2);
 insert into minisql values('ZhouShenghao', 3);
+

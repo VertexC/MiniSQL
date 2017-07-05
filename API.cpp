@@ -78,6 +78,8 @@ void API::table_create(CreateTPack * package){
 	}
 	record_m->CreateFile(file_record, sum); 
 	cout << "MiniSQL::Table <" << package->table << "> Create." <<endl;
+	delete[] index_file;
+	delete[] file_record;
 }
 
 void API::table_drop(DropTPack * package){
@@ -92,6 +94,7 @@ void API::table_drop(DropTPack * package){
 		if(CatlogManager::getIndex(package->table, it_attri->name, file_index)){
 			//have index to drop
 			index_m->drop_Index(file_index);
+			delete[] file_index;
 		}
 	}
 	//drop the record table
@@ -101,6 +104,7 @@ void API::table_drop(DropTPack * package){
 	//drop table in catalog
 	CatlogManager::dropTable(package->table);
 	cout << "MiniSQL::Table <" << package->table << "> Drop." << endl;
+    delete file_record;
 }
 
 
@@ -174,12 +178,14 @@ void API::record_insert(InsertPack * package){
 				fhd.DeleteRec(rid);
 				success = 0;
 			}	
+			delete[] file_index;
 		}
 		it_value ++;
 	}
 	record_m->CloseFile(fhd);
 	if(success) cout << "MiniSQL::Insert record Done." << endl;
 	else cout << "MiniSQL::Duplicate value of primary key or unique attributes." << endl;
+	delete[] file_record;
 }
 
 void API::record_delete(DeletePack * package){
@@ -221,6 +227,7 @@ void API::record_delete(DeletePack * package){
 					int type;
 					type_trans(*it_attri, type);
 					index_m->delete_Index(file_index, rid, it_attri->type);
+					delete[] file_index;
 				}
 			}
 			result_rid.push_back(rid);
@@ -288,11 +295,13 @@ void API::record_delete(DeletePack * package){
 				int type;
 				type_trans(*it_attri, type);
 				index_m->delete_Index(file_index, * it_result_rid, it_attri->type);
+			    delete[] file_index;
 			}
 		}
 		fhd.DeleteRec(*it_result_rid);
 	}
 	record_m->CloseFile(fhd);
+	delete[] file_record;
 }
 
 bool API::satisfy(char * pData, AttrType attrType, int attrLength, int attrOffset, CompOp compOp, void * value1, void * value2){
@@ -329,6 +338,7 @@ void API::index_create(CreateIPack * package){
 	type_trans(attri, type);
 	index_m->create_Index(index_file, type);
 	cout << "MiniSQL::Index of <" << package->attri << "> Create." << endl; 
+	delete[] index_file;
 }
 
 void API::index_drop(DropIPack * package){
@@ -339,6 +349,7 @@ void API::index_drop(DropIPack * package){
 	//drop table in catalog
 	CatlogManager::dropIndex(package->index);
 	cout << "MiniSQL::Index <" << package->index << "> Drop." << endl; 
+	delete[] file_name;
 }
 
 void API::selection_query(SelectPack * package){

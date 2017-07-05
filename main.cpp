@@ -22,16 +22,32 @@ int main(){
 	{
 		s.clear();
 		error.clear();
-		if (fp == stdin) printf(">");
-		while(!feof(fp) && s.find(';')==string::npos)
+		if (fp == stdin)
 		{
-			ch = fgetc(fp);
-			if (feof(fp)) break;
-			//cout<<ch;
-			s.append(1,ch);
+			printf(">");
+			while(s.find(';')==string::npos)
+			{
+				ch = fgetc(fp);
+				s.append(1,ch);
+			}
+			ch = fgetc(fp);//\n
 		}
-		while(!feof(fp) && fgetc(fp) != '\n');
-		if (feof(fp)) fp = stdin;
+		else
+		{
+			while(!feof(fp) && s.find(';')==string::npos)
+			{
+				s.append(1,ch);
+				if (feof(fp)) break;
+				//cout<<ch;
+				ch = fgetc(fp);
+			}
+			while(!feof(fp) && isspace(ch)) ch = fgetc(fp);
+			if (feof(fp))
+			{
+				fclose(fp);
+				fp = stdin;
+			} 
+		}
 		begin = clock();
 		if (!s.empty() &&!(p = interpreter(s,error)))
 		{
@@ -47,11 +63,13 @@ int main(){
 				{
 					printf("can't open file\n");
 					fp = stdin;
+					ch = fgetc(fp);
 				}
 			}
 			else
 			{
 				api.package_resolve(p);
+				delete p;
 			}
 		}
 		end = clock();
