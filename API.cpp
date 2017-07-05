@@ -178,7 +178,7 @@ void API::record_insert(InsertPack * package){
 				fhd.DeleteRec(rid);
 				success = 0;
 			}	
-			delete[] file_index;
+			//delete[] file_index;
 		}
 		it_value ++;
 	}
